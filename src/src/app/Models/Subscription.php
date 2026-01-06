@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Subscription extends Model
+{
+    protected $fillable = [
+        'user_id',
+        'package_id',
+        'type',
+        'starts_at',
+        'ends_at',
+    ];
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
+}
